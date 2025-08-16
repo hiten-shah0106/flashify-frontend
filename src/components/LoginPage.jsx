@@ -53,10 +53,10 @@ export default function LoginPage() {
                     <div>
                         <Link href="/" aria-label="go home"></Link>
                         <h1 className="text-title mb-1 mt-4 text-xl font-semibold">
-                            Create a Flashify Account
+                            Sign in to Flashify
                         </h1>
                         <p className="text-sm">
-                            Welcome! Create an account to get started
+                            Welcome Back! Sign in to continue
                         </p>
                     </div>
 
