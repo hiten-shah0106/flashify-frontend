@@ -36,11 +36,11 @@ export default function SignupPage() {
 
         const res = await signup(email, password);
 
-        if (res.success) {
-            setMessage(res.message);
-            setTimeout(() => router.push("/login"), 3000);
+        if (res.error) {
+            setMessage(res.error || "Something went wrong.");
         } else {
-            setMessage(res.message || "Something went wrong.");
+            setMessage("Check your email for confirmation mail.");
+            setTimeout(() => router.push("/login"), 3000);
         }
     }
 

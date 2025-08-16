@@ -24,6 +24,12 @@ export function AuthProvider({ children }) {
         }
     }, []);
 
+    async function signup(email, password) {
+        const res = await apiService.signup(email, password);
+        console.log(res);
+        return res;
+    }
+
     async function login(email, password) {
         const res = await apiService.login(email, password);
         if (res.session?.access_token) {
@@ -42,7 +48,7 @@ export function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider
-            value={{ token, user, login, logout, loadingAuth }}
+            value={{ token, user, signup, login, logout, loadingAuth }}
         >
             {children}
         </AuthContext.Provider>
