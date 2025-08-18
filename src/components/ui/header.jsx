@@ -38,9 +38,11 @@ function Navbar() {
         <header className="w-full z-40 fixed top-0 left-0 bg-surface-0">
             <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center">
                 {/* Left: Logo */}
-                <div className="flex lg:justify-start">
-                    <p className="font-bold text-2xl">Flashify</p>
-                </div>
+                <Link href="/">
+                    <div className="flex lg:justify-start">
+                        <p className="font-bold text-2xl">Flashify</p>
+                    </div>
+                </Link>
 
                 {/* Center: Navigation Items */}
                 <div className="justify-center items-center gap-4 lg:flex hidden flex-row">
@@ -49,14 +51,14 @@ function Navbar() {
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     <NavigationMenuLink>
-                                        <Button
-                                            variant="ghost"
-                                            className="text-lg cursor-pointer font-semibold"
-                                        >
-                                            <Link href={item.href}>
+                                        <Link href={item.href}>
+                                            <Button
+                                                variant="ghost"
+                                                className="text-lg cursor-pointer font-semibold"
+                                            >
                                                 {item.title}
-                                            </Link>
-                                        </Button>
+                                            </Button>
+                                        </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                             ))}
@@ -84,18 +86,18 @@ function Navbar() {
                     ) : (
                         // ✅ If not logged in, show Sign in & Get started
                         <>
-                            <Button variant="outline">
-                                <Link href="/login">Sign in</Link>
-                            </Button>
-                            <Button>
-                                <Link href="/dashboard">Get started</Link>
-                            </Button>
+                            <Link href="/login">
+                                <Button variant="outline">Sign in</Button>
+                            </Link>
+                            <Link href="/dashboard">
+                                <Button>Get started</Button>
+                            </Link>
                         </>
                     )}
                 </div>
 
                 {/* Mobile Menu */}
-                <div className="flex w-12 shrink lg:hidden items-end justify-end">
+                <div className="flex w-12 shrink lg:hidden items-end justify-end mx-auto">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
                         {isOpen ? (
                             <X className="w-5 h-5" />
@@ -137,12 +139,19 @@ function Navbar() {
                                 </>
                             ) : (
                                 <>
-                                    <Button variant="outline" className="mx-2">
-                                        <Link href="/login">Sign in</Link>
-                                    </Button>
-                                    <Button className="mx-2">
-                                        <Link href="/signup">Get started</Link>
-                                    </Button>
+                                    <Link href="/login">
+                                        <Button
+                                            variant="outline"
+                                            className="mx-2"
+                                        >
+                                            Sign in
+                                        </Button>
+                                    </Link>
+                                    <Link href="/signup">
+                                        <Button className="mx-2">
+                                            Get started
+                                        </Button>
+                                    </Link>
                                 </>
                             )}
                         </div>
