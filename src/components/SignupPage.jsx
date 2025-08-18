@@ -59,6 +59,10 @@ export default function SignupPage() {
                         <p className="text-sm">
                             Welcome! Create an account to get started
                         </p>
+                        <p className="text-sm">
+                            You will receive a confirmation email after
+                            registration.
+                        </p>
                     </div>
 
                     <hr className="my-4 border-dashed" />
