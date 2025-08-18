@@ -70,7 +70,7 @@ export default function SignupPage() {
                     <div className="space-y-5">
                         <div className="space-y-2">
                             <Label htmlFor="email" className="block text-sm">
-                                Username
+                                Email
                             </Label>
                             <Input
                                 type="email"
